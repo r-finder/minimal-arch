@@ -56,7 +56,7 @@ Last thing, you have to mount these partitions to their temporary mount points. 
 
 Your Linux base system will be installed to the /mnt directory with the following command:
 
-    pacstrap /mnt base linux linux-firmware intel-ucode wpa_supplicant vim 
+    pacstrap /mnt base linux linux-firmware intel-ucode wpa_supplicant neovim 
 
 If your CPU is AMD, then use amd-ucode instead of intel. If you don't like vim, change it to whatever you feel comfortable with (nano for example)
 
@@ -81,7 +81,7 @@ Now let's set the local time zone and the locale. I want my system in US English
 
 Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
 
-    vim /etc/locale.gen
+    nvim /etc/locale.gen
 
 Then run:
 
@@ -95,7 +95,7 @@ Save the settings for the locale and (if needed) the keyboard layout
 Set the computer name and configure the localhost networking:
 
     echo "thinkpad01" > /etc/hostname
-    vim /etc/hosts
+    nvim /etc/hosts
 	--------------------------------------
         127.0.0.1	localhost
         ::1		localhost
@@ -115,13 +115,13 @@ Create a ramdisk image needed for the boot routine:
 Now let's install and configure the systemd's own bootloader:
 
     bootctl install
-    vim /boot/loader/loader.conf
+    nvim /boot/loader/loader.conf
 	--------------------------------------
         default  arch.conf
         timeout  3
         console-mode keep
 
-    vim /boot/loader/entries/arch.conf
+    nvim /boot/loader/entries/arch.conf
 	--------------------------------------
         title   Arch Linux
         linux   /vmlinuz-linux
@@ -151,7 +151,7 @@ Now let's configure networking with systemd-networkd. First, run the following c
 
 there will be wired adapter with the name beginning with "en", and a wireless with a name beginning with "wl". On my computer it's wlp3s0. I bet you're using a router with wifi. Then create following files:
 
-    vim /etc/systemd/network/25-wireless.network
+    nvim /etc/systemd/network/25-wireless.network
 	--------------------------------------------
         [Match]
         Name=wl*
@@ -162,7 +162,7 @@ there will be wired adapter with the name beginning with "en", and a wireless wi
         [DHCP]
         RouteMetric=20
 
-    vim /etc/systemd/network/20-wired.network
+    nvim /etc/systemd/network/20-wired.network
 	--------------------------------------
         [Match]
         Name=en*
@@ -173,7 +173,7 @@ there will be wired adapter with the name beginning with "en", and a wireless wi
         [DHCP]
         RouteMetric=10
 
-    vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+    nvim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
 	--------------------------------------
         ctrl_interface=/run/wpa_supplicant
         update_config=1
@@ -219,7 +219,7 @@ Let's set up the actual user you'll be working under. The following commands wil
 Now install sudo and enable the user for it
 
     pacman -S sudo
-    ln -s /usr/bin/vim /usr/bin/vi 
+    ln -s /usr/bin/nvim /usr/bin/vi 
     visudo 
 
 When the editor opens, uncomment the line "%wheel ALL=(ALL) ALL", making sudo available to the *wheel* group.
