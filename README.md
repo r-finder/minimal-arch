@@ -254,3 +254,9 @@ Install more the sound goodness:
 PS. From a comment on Reddit:
 
 There are equivalents for selecting timezones and utc hardware clock using timedatectl. You can use machinectl to see the hostname, and pulseaudio comes with a systemd service systemctl --user enable --now pulseaudio.
+
+## Environment adjustments
+
+Setting up GTK font:
+
+	gsettings set org.gnome.desktop.interface font-name 'Sans 10'
