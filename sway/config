@@ -22,6 +22,7 @@ set $menu bemenu-run -i -p 'exec:' --fn '$fontname $biggerfont'
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output DP-1 mode 2560x1440@74.780Hz
 #
 # Example configuration:
 #
@@ -51,7 +52,7 @@ input "type:keyboard" {
 
 input "type:pointer" {
 	accel_profile "adaptive"
-	pointer_accel -0.3
+	pointer_accel -0.8
 }
 
 ### Key bindings
@@ -201,7 +202,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while ~/.config/sway/status.sh; do sleep 1; done
 
     colors {
         statusline #ffffff
