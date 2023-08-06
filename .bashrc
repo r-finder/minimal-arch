@@ -10,5 +10,5 @@ alias ll="ls -l"
 alias la="ls -al"
 
 
-PS1='[%B%n@%m%b %/]$ '
+PS1="[\[$(tput bold)\]\u@\h\[$(tput sgr0)\] \w]\[$(tput sgr0)\]\$"  #http://bashrcgenerator.com/
 
