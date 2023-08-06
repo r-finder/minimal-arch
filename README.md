@@ -79,6 +79,8 @@ Now let's set the local time zone and the locale. I want my system in US English
     ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
     hwclock --systohc
 
+There are equivalents for selecting timezones and utc hardware clock using timedatectl. You can use machinectl to see the hostname.
+
 Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
 
     nvim /etc/locale.gen
@@ -242,19 +244,15 @@ Make your text console more usable:
 
 The additional packages you'll require for setting up the graphical system on Wayland:
 
-    sudo pacman -S sway bemenu ttf-font-awesome acpi termite
+    sudo pacman -S sway bemenu ttf-font-awesome acpi boot
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
 Install more the sound goodness:
 
     sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol
-    pulseaudio --daemonize
-
-PS. From a comment on Reddit:
-
-There are equivalents for selecting timezones and utc hardware clock using timedatectl. You can use machinectl to see the hostname, and pulseaudio comes with a systemd service systemctl --user enable --now pulseaudio.
-
+    systemctl --user enable --now pulseaudio
+    
 ## Environment adjustments
 
 Setting up GTK font:
