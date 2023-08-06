@@ -281,4 +281,9 @@ pair the devices from bluetoothctl utility
     	# connect 50:1A:A5:76:C6:E6
      	# trust 50:1A:A5:76:C6:E6
       	# scan off
+
+if needed, restart Pulseaudio
+
+	pulseaudio -k
+ 
        	# exit
