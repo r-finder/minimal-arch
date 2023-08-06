@@ -232,7 +232,7 @@ Now let's set up the graphical UI and make the environment comfortable. I keep m
     sudo pacman -S git
     cd ~
     git init
-    git remote add origin https://github.com/asustavov/minimalarch.git
+    git remote add origin https://github.com/r-finder/minimal-arch.git
     git fetch
     git checkout -f master
 
@@ -260,3 +260,25 @@ There are equivalents for selecting timezones and utc hardware clock using timed
 Setting up GTK font:
 
 	gsettings set org.gnome.desktop.interface font-name 'Sans 10'
+
+ ## Bluetooth
+
+ install following:
+ 
+       sudo pacman -S bluez bluez-utils pulseaudio-bluetooth
+
+then enable Bluetooth Service
+
+	sudo systemctl enable bluetooth.service
+ 	sudo systemctl start bluetooth.service
+
+pair the devices from bluetoothctl utility
+
+	bluetoothctl
+ 	# power on
+  	# scan on
+   	# pair 50:1A:A5:76:C6:E6
+    	# connect 50:1A:A5:76:C6:E6
+     	# trust 50:1A:A5:76:C6:E6
+      	# scan off
+       	# exit
