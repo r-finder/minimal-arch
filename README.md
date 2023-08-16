@@ -56,6 +56,7 @@ Last thing, you have to mount these partitions to their temporary mount points. 
 
 Your Linux base system will be installed to the /mnt directory with the following command:
 
+    pacman -Sy archlinux-keyring
     pacstrap /mnt base linux linux-firmware intel-ucode wpa_supplicant neovim 
 
 If your CPU is AMD, then use amd-ucode instead of intel. If you don't like vim, change it to whatever you feel comfortable with (nano for example)
