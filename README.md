@@ -246,6 +246,9 @@ Make your text console more usable:
 The additional packages you'll require for setting up the graphical system on Wayland:
 
     sudo pacman -S sway bemenu ttf-font-awesome acpi boot
+    sudo usermod -aG seat alex
+    systemctl enable seatd.service
+    systemctl start seatd.service
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
