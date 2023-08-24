@@ -1,0 +1,5 @@
+{
+  "window.titleBarStyle": "custom",
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+}

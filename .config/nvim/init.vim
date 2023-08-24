@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'itchyny/lightline.vim'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 
@@ -14,3 +15,8 @@ set ignorecase
 set smartcase
 
 syntax on
+
+let g:vimwiki_list = [{'path': '~/obsidian/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+

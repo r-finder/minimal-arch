@@ -3,7 +3,7 @@
 #export GDK_BACKEND=wayland
 export MOZ_ENABLE_WAYLAND=1
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/sh:$PATH"
 
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
