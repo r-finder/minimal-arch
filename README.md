@@ -33,7 +33,7 @@ Partitioning the disk is a common task on all OS'es, yes, even Windows. Though u
 
 This command will list all block devices on your system, ordered as a tree by drives and their partitions. Most likely that will be the internal SSD and the USB drive with the live system. On a modern Thinkpad with a NVMe SSD the internal drive will be probably /dev/nvme0n1. 
 
-    fdisk /dev/nvme0n1
+    cfdisk /dev/nvme0n1
 
 then follow the fdisk's instructions. You need to create in the following order:
 1. New GPT table
@@ -235,7 +235,7 @@ Now let's set up the graphical UI and make the environment comfortable. I keep m
     sudo pacman -S git
     cd ~
     git init
-    git remote add origin https://github.com/r-finder/minimal-arch.git
+    git remote add origin https://github.com/r-finder/dotfiles.git
     git fetch
     git checkout -f master
 
@@ -246,9 +246,6 @@ Make your text console more usable:
 The additional packages you'll require for setting up the graphical system on Wayland:
 
     sudo pacman -S sway bemenu ttf-font-awesome acpi boot
-    sudo usermod -aG seat alex
-    systemctl enable seatd.service
-    systemctl start seatd.service
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
