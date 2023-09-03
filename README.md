@@ -245,14 +245,14 @@ Make your text console more usable:
 
 The additional packages you'll require for setting up the graphical system on Wayland:
 
-    sudo pacman -S sway bemenu ttf-font-awesome acpi boot
+    sudo pacman -S sway bemenu foot ttf-droid
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
 Install pipewire:
 
-    sudo pacman -S pipewire pipewire-audio
-    systemctl --user enable --now pipewire.service
+    sudo pacman -S pulseaudio pavucontrol
+    systemctl --user enable --now pulseaudio.service
     
 ## Environment adjustments
 
