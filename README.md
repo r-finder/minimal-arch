@@ -249,10 +249,12 @@ The additional packages you'll require for setting up the graphical system on Wa
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
-Install pipewire:
+Install pipewire and other multimedia stuff:
 
-    sudo pacman -S pulseaudio pavucontrol
-    systemctl --user enable --now pulseaudio.service
+    sudo pacman -S pipewire pipewire-pulse pavucontrol sof-firmware intel-media-driver pipewire-alsa pipewire-audio
+    systemctl --user enable --now pipewire-pulse.service
+
+if it still doesn't work, add alsa-firmware package
     
 ## Environment adjustments
 
