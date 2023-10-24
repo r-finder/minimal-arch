@@ -251,8 +251,7 @@ When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wl
 
 Install pipewire and other multimedia stuff:
 
-    sudo pacman -S pipewire pipewire-pulse pavucontrol sof-firmware intel-media-driver pipewire-alsa pipewire-audio
-    systemctl --user enable --now pipewire-pulse.service
+    sudo pacman -S pipewire sof-firmware intel-media-driver pipewire-alsa pipewire-audio
     
 ## Environment adjustments
 
