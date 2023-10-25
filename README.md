@@ -245,13 +245,21 @@ Make your text console more usable:
 
 The additional packages you'll require for setting up the graphical system on Wayland:
 
-    sudo pacman -S sway bemenu alacritty waybar ttf-font-awesome ttf-droid
+    sudo pacman -S sway bemenu alacritty waybar ttf-font-awesome ttf-droid firefox
 
 When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wlroots. 
 
 Install pipewire and other multimedia stuff:
 
     sudo pacman -S pipewire sof-firmware intel-media-driver pipewire-alsa pipewire-audio
+
+Install auto-cpufreq from AUR:
+
+    sudo pacman -S base-devel
+    git clone https://aur.archlinux.org/auto-cpufreq.git
+    cd auto-cpufreq
+    makepkg -si
+    systemctl enable --now auto-cpufreq.service
     
 ## Environment adjustments
 
