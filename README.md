@@ -252,6 +252,11 @@ When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wl
 Install pipewire and other multimedia stuff:
 
     sudo pacman -S pipewire sof-firmware intel-media-driver pipewire-alsa pipewire-audio
+    sudo systemctl enable pipewire
+    sudo systemctl start pipewire
+    sudo systemctl enable wireplumber
+    sudo systemctl start wireplumber
+
 
 Install auto-cpufreq from AUR:
 
