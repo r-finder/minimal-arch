@@ -193,10 +193,8 @@ Put in you actual SSID and password for the wifi. If you use multiple networks, 
 
 Now enable and start the services:
 
-    systemctl enable systemd-networkd
-    systemctl enable wpa_supplicant@wlp3s0
-    systemctl start systemd-networkd
-    systemctl start wpa_supplicant@wlp3s0
+    systemctl enable --now systemd-networkd
+    systemctl enable --now wpa_supplicant@wlp3s0
 
 Run following to check the results:
 
@@ -205,8 +203,7 @@ Run following to check the results:
 The last thing is to make the name resolution work:
 
     ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-    systemctl enable systemd-resolved
-    systemctl start systemd-resolved
+    systemctl enable --now systemd-resolved
 
 To test the networking, ping some internet site:
 
@@ -252,10 +249,8 @@ When asked for options, choose fonts: ttf-droid, opengl driver: mesa, bemenu: wl
 Install pipewire and other multimedia stuff:
 
     sudo pacman -S pipewire sof-firmware intel-media-driver pipewire-alsa pipewire-audio
-    sudo systemctl enable pipewire
-    sudo systemctl start pipewire
-    sudo systemctl enable wireplumber
-    sudo systemctl start wireplumber
+    sudo systemctl --user enable --now pipewire
+    sudo systemctl --user enable --now wireplumber
 
 
 Install auto-cpufreq from AUR:
